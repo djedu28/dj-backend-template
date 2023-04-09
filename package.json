@@ -28,5 +28,14 @@
     "eslint": "^8.29.0",
     "nodemon": "^2.0.20",
     "sequelize-cli": "^6.6.0"
-  }
+  },
+  "keywords": [
+    "nodejs",
+    "backend",
+    "api",
+    "express",
+    "sequelize",
+    "database",
+    "best practices"
+  ]
 }
