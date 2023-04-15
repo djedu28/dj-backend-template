@@ -14,15 +14,15 @@ const connection = new Sequelize(dbConfig);
 
 // Importa os modelos
 const User = require('../models/User');
-//const Exemplo = require('../models/Exemplo');
+const Exemplo = require('../models/Exemplo');
 
 // Inicializa os modelos
 User.init(connection);
-// Exemplo.init(connection);
+Exemplo.init(connection);
 
 // Associa os modelos as relações
 User.associate(connection.models);
-// Exemplo.associate(connection.models);
+Exemplo.associate(connection.models);
 
 // teste de conexão
 (async () => {
