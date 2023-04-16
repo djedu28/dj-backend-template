@@ -23,12 +23,15 @@ module.exports = {
                 error: '<user_id> not found'
             });
         }
-        const user = await User.findAll({
-            where: {
-                id: user_id
-            },
-            //attributes: ['id', 'nome'],
-        });
+        //  busca e verificar se existe
+        const user = await User.findByPk(user_id);
+        if (!user) {
+            return res.status(404).json({
+                success: false,
+                messages: "Não foi encontrada um user com o identificador informado",
+                error: 'User not found'
+            });
+        }
 
         return res.json(user);
     },

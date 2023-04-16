@@ -33,13 +33,17 @@ module.exports = {
                 error: '<exemplo_id> not found'
             });
         }
-        const exemplo = await Exemplo.findAll({
-            where: {
-                id: exemplo_id
-            },
+        // busca e verifica se existe
+        const exemplo = await Exemplo.findByPk(exemplo_id,{
             //attributes: ['id', 'nome'],
         });
-
+        if (!exemplo) {
+            return res.status(404).json({
+                success: false,
+                messages: "Não foi encontrada um exemplo com o identificador informado",
+                error: 'Exemplo not found'
+            });
+        }
         return res.json(exemplo);
     },
     // CRIAR
