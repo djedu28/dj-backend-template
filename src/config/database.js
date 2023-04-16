@@ -3,7 +3,11 @@ require('dotenv/config');
 module.exports = process.env.BD !== "PROD"
     ? { // DEV
         dialect: 'sqlite',
-        storage: './database.sqlite' // caminho para o arquivo do banco de dados
+        storage: './database.sqlite', // caminho para o arquivo do banco de dados
+        define: {
+            timestamps: true,
+            underscored: true,
+        },
     }
     : { // PROD
         dialect: 'postgres',
