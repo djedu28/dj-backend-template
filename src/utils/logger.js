@@ -37,10 +37,11 @@ console.log('Logger Ativado'); // O log será gravado no console e no arquivo ap
 
 module.exports = logger;
 
-```
-Uma maneira de implementar logging em seu projeto é usando uma biblioteca como o Winston.
-Winston é uma biblioteca de registro de eventos com suporte para vários níveis de log,
-como info, debug e error. Com o Winston, você pode gravar logs em vários formatos,
-como JSON, CSV e texto simples. Você também pode enviar logs para vários destinos,
-como um arquivo, console ou serviço de terceiros.
-```
+/**
+ * Uma maneira de implementar logging em seu projeto é usando uma biblioteca como o Winston.
+ * Winston é uma biblioteca de registro de eventos com suporte para vários níveis de log,
+ * como info, debug e error. Com o Winston, você pode gravar logs em vários formatos,
+ * como JSON, CSV e texto simples. Você também pode enviar logs para vários destinos,
+ * como um arquivo, console ou serviço de terceiros.
+ *
+ */

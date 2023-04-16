@@ -6,6 +6,9 @@
 .__removido
 .__*
 
+# logger
+*.log
+
 
 # dependencies
 node_modules

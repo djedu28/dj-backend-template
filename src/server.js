@@ -1,6 +1,7 @@
 const express = require('express');
 
-require('./database');
+require('./database');        // Conectando ao BD
+require('./utils/logger.js'); // Ativando LOGGER
 
 const HOST = process.env.HOST || "localhost"
 const PORT = process.env.PORT || 3333
