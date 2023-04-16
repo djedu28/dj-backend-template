@@ -13,7 +13,7 @@ module.exports = {
 
         return res.json(users);
     },
-    list_one: async (req, res) => {
+    getById: async (req, res) => {
         // lista um 'User' pelo id informado
         const { user_id } = req.params;
         if (!user_id) {

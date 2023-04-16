@@ -1,7 +1,8 @@
 const Exemplo = require('../models/Exemplo');
-/**
+/*
  * Neste exemplo, temos um controller que realiza operações básicas de CRUD em um modelo chamado ExemploModel.
  *  O método `LISTAR` retorna uma lista de todos os exemplos cadastrados no banco de dados,
+ *  O método `GET` retorna um um exemplo existente,
  *  o método `CRIAR` cria um novo exemplo,
  *  o método `ATUALIZAR` atualiza um exemplo existente e
  *  o método `DELETAR` deleta um exemplo existente.
@@ -22,7 +23,7 @@ module.exports = {
 
         return res.json(exemplos);
     },
-    list_one: async (req, res) => {
+    getById: async (req, res) => {
         // lista um 'Exemplo' pelo id informado
         const { exemplo_id } = req.params;
         if (!exemplo_id) {
