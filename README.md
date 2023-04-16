@@ -45,6 +45,11 @@ caso tenha dificuldades para instalar as dependencias: consulte o arquivo (dj_no
 
 Contribuições são bem-vindas! Sinta-se à vontade para abrir uma issue ou enviar um pull request.
 
+## Para utilizar como template
+Utilizando a linha de comando:
+```bash
+git clone https://github.com/djedu28/dj-backend-template.git dj-backend
+```
 ## Licença
 
 Este projeto está licenciado sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
