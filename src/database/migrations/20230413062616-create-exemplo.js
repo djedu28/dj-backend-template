@@ -17,6 +17,12 @@ Sequelize <== DataTypes */
 module.exports = {
     up: async (queryInterface, Sequelize) => {
         return queryInterface.createTable('exemplos', {
+            id: {
+                type: Sequelize.INTEGER,
+                primaryKey: true,
+                autoIncrement: true,
+                allowNull: false,
+            },
             nome: {
                 type: Sequelize.STRING,
                 allowNull: false,
@@ -25,6 +31,20 @@ module.exports = {
                 type: Sequelize.STRING,
                 allowNull: true,
             },
+
+            /* --- Refetencias --- */
+
+            /* --- uso interno ---*/
+            created_at: {
+                type: Sequelize.DATE,
+                allowNull: false,
+                select: false,
+            },
+            updated_at: {
+                type: Sequelize.DATE,
+                allowNull: false,
+                select: false,
+            }
         })
     },
 
