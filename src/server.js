@@ -3,6 +3,8 @@ const express = require('express');
 require('./database');        // Conectando ao BD
 require('./utils/logger.js'); // Ativando LOGGER
 
+const api = require('./api.js');
+
 const HOST = process.env.HOST || "localhost"
 const PORT = process.env.PORT || 3333
 
@@ -17,14 +19,7 @@ app.use("/ping", (req, res) => {
     res.json({ "pint": "pong" });
 });
 
-// Importando rotas
-const userRoutes = require('./routes/userRoutes.js');
-const exemploRoutes = require('./routes/exemploRoutes.js');
-
-// Definir rotas importadas
-app.use("/usuarios", userRoutes);
-app.use('/exemplos', exemploRoutes);
-
+app.use("/api", api)
 
 app.listen(PORT, ()=>{
     console.log('No Ar!', 'Na porta:', PORT)
@@ -33,4 +28,3 @@ app.listen(PORT, ()=>{
     // console.log("CONFIG:BD  =", process.env.BD)
     //console.log("CONFIG:JWT_EXPIRES_IN =", process.env.JWT_EXPIRES_IN)
 });
-
