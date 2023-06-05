@@ -115,7 +115,7 @@
 
 </script>
 <script>
-    SendForm('/users', '#registerUser', beforeSend=()=>{
+    SendForm('api/users', '#registerUser', beforeSend=()=>{
         const dia = document.querySelector('#dia').value;
         const mes = document.querySelector('#mes').value;
         const ano = document.querySelector('#ano').value;
