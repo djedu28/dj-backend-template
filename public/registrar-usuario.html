@@ -112,12 +112,15 @@
             //this.value = '';
         }
     });
-
-    function carregarListas(){
-        function* numeroSequencial() {
+</script>
+<script>
+    function carregarListaDiasMes(){
+        function* optionSequencial() {
             let numero = 1;
             while (true) {
-                yield numero.toString().padStart(2, '0');
+                const option = document.createElement('option');
+                yield option.value = numero;
+                // yield numero;
                 numero += 1;
             }
         }
@@ -130,25 +133,21 @@
         dataListDia.id = 'dias';
         dataListMes.id = 'meses';
 
-        const geradorDia = numeroSequencial();
-        const geradorMes = numeroSequencial();
+        const geradorDia = optionSequencial();
+        const geradorMes = optionSequencial();
 
         const dias = Array.from({ length: 31 }, () => {
-            const option = document.createElement('option');
-            option.value = geradorDia.next().value;
-            dataListDia.appendChild(option);
+            dataListDia.appendChild(geradorDia.next().value);
         })
         const meses = Array.from({ length: 12 }, () => {
-            const option = document.createElement('option');
-            option.value = geradorMes.next().value;
-            dataListMes.appendChild(option);
+            dataListMes.appendChild(geradorMes.next().value);
         })
 
         containerInput.appendChild(dataListDia);
         containerInput.appendChild(dataListMes);
     }
 
-    carregarListas();
+    carregarListaDiasMes();
 </script>
 <script>
     SendForm('api/users', '#registerUser', beforeSend=()=>{
@@ -158,17 +157,16 @@
         return { nascimento:[ano, mes, dia].join("/")}
     })
 
-    function carregarLista() { // baseado em busca na api
-        // SendForm('/auth/register', '#registerUser');
-        // fetch('/auth/')
-        //     .then(response => response.json())
-        //     .then(data => {
-        //         // código para adicionar os itens à lista
-
-        //     })
-        //     .catch(error => console.error(error));
-    }
-    document.addEventListener('DOMContentLoaded', carregarLista);
+    //function carregarLista() { // baseado em busca na api
+    //    SendForm('/auth/register', '#registerUser');
+    //    fetch('/auth/')
+    //        .then(response => response.json())
+    //        .then(data => {
+    //            // código para adicionar os itens à lista
+    //        })
+    //        .catch(error => console.error(error));
+    //}
+    //document.addEventListener('DOMContentLoaded', carregarLista);
 </script>
 
 </html>
