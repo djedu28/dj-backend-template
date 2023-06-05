@@ -1,4 +1,4 @@
-para ativar a previsualização de md,
+para ativar a pré-visualização de md,
 use o atalho
 ctrl + k v
 

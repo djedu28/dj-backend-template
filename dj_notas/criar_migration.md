@@ -62,7 +62,6 @@ module.exports = {
 
 A função `up` é responsável por realizar a migração, ou seja, criar a tabela de usuários. A função `down`, por sua vez, é responsável por desfazer a migração, ou seja, excluir a tabela de usuários.
 
-
 ## Executando a migração
 
 Para aplicar a migração no banco de dados, utilizamos o comando `sequelize db:migrate`. Esse comando executa todas as migrações que ainda não foram aplicadas no banco de dados.
@@ -99,27 +98,35 @@ Além disso, é recomendável seguir algumas práticas de padronização na cria
 ## RESUMO
 >
 > ### 1. Cria uma nova migração
+>
 > ``` bash
 > yarn sequelize migration:generate
 > ```
+>
 > ### 2. Modifique o arquivo gerado dentro da pasta `src\database\migrations`
 >
 > ...
 >
 > ### 3. Executa as migrações
+>
 > ``` bash
 > yarn sequelize db:migrate
 > ```
+>
 > ### 4. Verificar o status das migrações
+>
 > ``` bash
 > yarn sequelize db:migrate:status
 > ```
+>
 > ### <!> Desfazer a última migração > executada
+>
 > ``` bash
 > yarn sequelize db:migrate:undo
 > ```
 >
-## Sugestões de padronização:
+## Sugestões de padronização
+
 - Nomear a migração em inglês,
 - Utilizar nome com o padrão camelCase ou **kebab-case**, defina um dos padrões para o projeto;
 - O nome da migração deve descrever o que está sendo feito naquela alteração do banco de dados;
@@ -127,4 +134,3 @@ Além disso, é recomendável seguir algumas práticas de padronização na cria
 - Seguir um padrão de nomenclatura para os campos, tabelas e relacionamentos, utilizando o mesmo padrão em todas as migrações;
 - Utilizar a convenção de nomenclatura do Sequelize para as tabelas (plural, snake_case);
 - Utilizar as migrations para realizar todas as alterações na estrutura do banco de dados, evitando a necessidade de intervenções manuais.
-
