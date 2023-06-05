@@ -16,7 +16,7 @@ Este é um template para criar backend APIs em NodeJS seguindo as melhores prát
 
 - Node.js e Yarn instalados
 - PostgreSQL instalado e rodando
-caso tenha dificuldades para instalar as dependencias: consulte o arquivo (dj_notas/instalando-dependencias.md)[./dj_notas/instalando-dependencias.md]
+caso tenha dificuldades para instalar as dependências: consulte o arquivo [dj_notas/instalando-dependencias.md](./dj_notas/instalando-dependencias.md)
 
 ## Instalação
 
@@ -46,10 +46,13 @@ caso tenha dificuldades para instalar as dependencias: consulte o arquivo (dj_no
 Contribuições são bem-vindas! Sinta-se à vontade para abrir uma issue ou enviar um pull request.
 
 ## Para utilizar como template
+
 Utilizando a linha de comando:
+
 ```bash
 git clone https://github.com/djedu28/dj-backend-template.git dj-backend
 ```
+
 ## Licença
 
 Este projeto está licenciado sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
