@@ -95,9 +95,17 @@
         }
     });
 
+    [diaInput, mesInput].forEach(element => {
+        element.addEventListener('blur', function (event) {
+            if (this.value.length === 1) {
+                this.value = this.value.toString().padStart(2, '0');
+            }
+        })
+    })
+
     anoInput.addEventListener('blur', function (event) {
-        const dia = document.querySelector('#dia').value;
-        const mes = document.querySelector('#mes').value;
+        const dia = diaInput.value;
+        const mes = mesInput.value;
         const ano = this.value;
 
         // const data = moment(`${ano}-${mes}-${dia}`, 'YYYY-MM-DD', true);
@@ -109,6 +117,10 @@
 
         if (data.toISOString().split("T")[0] !== [ano, mes, dia].join("-")) {
             alert('Data inválida!');
+            console.log([
+                data.toISOString().split("T")[0],
+                [ano, mes, dia].join("-")
+            ])
             //this.value = '';
         }
     });
@@ -119,7 +131,8 @@
             let numero = 1;
             while (true) {
                 const option = document.createElement('option');
-                yield option.value = numero;
+                option.value = numero.toString().padStart(2, '0');
+                yield option
                 // yield numero;
                 numero += 1;
             }
