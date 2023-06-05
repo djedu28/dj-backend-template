@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Teste API</title>
+    <style>
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        input {
+            margin: 5px;
+            padding: 5px;
+            width: 300px;
+            border-radius: 5px;
+            border: 1px solid gray;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 5px;
+            width: 100px;
+            border-radius: 5px;
+            border: 1px solid gray;
+            background-color: lightgray;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: gray;
+            color: white;
+        }
+    </style>
+    <!-- <link rel="stylesheet" href="https://unpkg.com/terminal.css@0.7.2/dist/terminal.min.css" /> -->
+    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css"> -->
+    <link rel="stylesheet" href="css/style.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script src="script/sendForm.js"> </script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Cadastrar Usuário</h1>
+        <form id="registerUser">
+            <!-- <h2>Cadastrar Usuário</h2> -->
+            <h3>Preencha com as informações solicitadas</h3>
+            <!-- username, -->
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <!-- password, -->
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <!-- nome, -->
+            <label for="nome">Nome Completo:</label>
+            <input type="text" id="nome" name="nome" required>
+            <!-- nascimento, -->
+            <label for="nascimento">Nascimento:</label>
+            <!-- <input type="date" id="nascimento" name="nascimento" required> -->
+            <div class="input-container">
+                <input type="number" id="dia" name="dia" min="1" max="31" placeholder="DD" required>
+                <span>/</span>
+                <input type="number" id="mes" name="mes" min="1" max="12" placeholder="MM" required>
+                <span>/</span>
+                <input type="number" id="ano" name="ano" min="1900" max="2099" placeholder="AAAA" required>
+            </div>
+            <!-- email, -->
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <!-- whatsapp -->
+            <label for="whatsapp">WhatsApp:</label>
+            <input type="text" id="whatsapp" name="whatsapp" required>
+
+            <pre> <code id="result"></code> </pre>
+            <button type="submit">Registrar</button>
+        </form>
+    </div>
+</body>
+<script>
+    const diaInput = document.querySelector('#dia');
+    const mesInput = document.querySelector('#mes');
+    const anoInput = document.querySelector('#ano');
+
+    diaInput.addEventListener('input', function (event) {
+        if (this.value.length === 2 && this.value <= 31) {
+            mesInput.focus();
+        }
+    });
+
+    mesInput.addEventListener('input', function (event) {
+        if (this.value.length === 2 && this.value<=12) {
+            anoInput.focus();
+        }
+    });
+
+    anoInput.addEventListener('blur', function (event) {
+        const dia = document.querySelector('#dia').value;
+        const mes = document.querySelector('#mes').value;
+        const ano = this.value;
+
+        // const data = moment(`${ano}-${mes}-${dia}`, 'YYYY-MM-DD', true);
+        data = new Date(
+            ano,
+            mes-1, // subtrai 1 do mês porque o JavaScript conta os meses a partir de 0
+            dia
+        );
+
+        if (data.toISOString().split("T")[0] !== [ano, mes, dia].join("-")) {
+            alert('Data inválida!');
+            //this.value = '';
+        }
+    });
+
+</script>
+<script>
+    SendForm('/users', '#registerUser', beforeSend=()=>{
+        const dia = document.querySelector('#dia').value;
+        const mes = document.querySelector('#mes').value;
+        const ano = document.querySelector('#ano').value;
+        return { nascimento:[ano, mes, dia].join("/")}
+    })
+
+    function carregarLista() {
+        // SendForm('/auth/register', '#registerUser');
+        // fetch('/auth/')
+        //     .then(response => response.json())
+        //     .then(data => {
+        //         // código para adicionar os itens à lista
+
+        //     })
+        //     .catch(error => console.error(error));
+    }
+    document.addEventListener('DOMContentLoaded', carregarLista);
+</script>
+
+</html>
