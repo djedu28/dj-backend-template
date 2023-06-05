@@ -9,8 +9,9 @@ Este é um template para criar backend APIs em NodeJS seguindo as melhores prát
 ## 🚀 Tecnologias
 
 - ⚡ NodeJS
+- ✨ Express
 - 💾 Sequelize
-- 🗄 PostgreSQL
+- 🐘 PostgreSQL
 
 ## Pré-requisitos
 
@@ -40,19 +41,47 @@ caso tenha dificuldades para instalar as dependências: consulte o arquivo [dj_n
 - `src/routes`: rotas da API
 - `src/utils`: funções utilitárias
 - `src/server.js`: arquivo principal do servidor
+- `src/api.js`: arquivo que define a configuração e inicialização da API
+
+<!--
+- `src/middlewares`: middlewares para processamento intermediário das requisições -->
+
+<!-- ## Estrutura do Banco de Dados -->
+<!-- ![img](./src/database/diagrama.png) -->
 
 ## Contribuindo
 
 Contribuições são bem-vindas! Sinta-se à vontade para abrir uma issue ou enviar um pull request.
 
-## Para utilizar como template
+## Licença
 
-Utilizando a linha de comando:
+Este projeto está licenciado sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
+
+## Para utilizar este template
+
+- Utilize a linha de comando abaixo para clonar este repositorio
 
 ```bash
 git clone https://github.com/djedu28/dj-backend-template.git dj-backend
 ```
 
-## Licença
+- Adicione pelo menos os elementos abaixo no seu README.md
 
-Este projeto está licenciado sob a licença MIT. Veja o arquivo LICENSE para mais detalhes.
+```
+## Baseado no Template: [DJ Backend Template](https://github.com/djedu28/dj-backend-template)
+
+O `DJ Backend Template` é um template para criar backend APIs em NodeJS seguindo as melhores práticas de desenvolvimento.
+
+Desenvolvido por [Eduardo Santos (@DjEdu28)](https://github.com/djedu28)
+
+### Contribuindo
+
+Contribuições são bem-vindas! Sinta-se à vontade para abrir uma issue ou enviar um pull request para [DJ Backend Template](https://github.com/djedu28/dj-backend-template)
+
+<https://github.com/djedu28/dj-backend-template>
+
+### Licença de `DJ Backend Template`
+
+O projeto `DJ Backend Template` está licenciado sob a licença MIT. Veja o arquivo [LICENSE](https://github.com/djedu28/dj-backend-template/blob/master/LICENSE.md)  para mais detalhes.
+
+```

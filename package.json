@@ -1,15 +1,18 @@
 {
     "name": "dj-backend-template",
-    "version": "1.0.0",
-    "description": "Uma referencia para criar (futuros) backend API com NodeJS, seguindo as melhores boas praticas que aprendi durante os anos de desenvolvimento",
+    "template": "dj-backend-template",
+    "version": "1.1.0",
+    "description": "Uma referencia para criar (futuro's) backend API com NodeJS, seguindo as melhores boas praticas que aprendi durante os anos de desenvolvimento",
     "main": "./src/server.js",
     "author": "Eduardo Santos (@DjEdu28)",
+    "author-template": "Eduardo Santos (@DjEdu28)",
     "license": "MIT",
     "private": true,
     "repository": "https://github.com/djedu28/dj-backend-template",
+    "repository-template": "https://github.com/djedu28/dj-backend-template",
     "scripts": {
         "att": "yarn upgrade-interactive --latest",
-        "dev": "cls && nodemon -r dotenv/config ./src/server.js",
+        "dev": "(cls||clear) && nodemon -r dotenv/config ./src/server.js",
         "start": "node ./src/server.js"
     },
     "dependencies": {
@@ -38,6 +41,7 @@
         "express",
         "sequelize",
         "database",
-        "best practices"
+        "best practices",
+        "djedu28"
     ]
 }
