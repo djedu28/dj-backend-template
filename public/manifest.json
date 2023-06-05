@@ -1,19 +1,24 @@
 {
-    "name": "Nome do seu site",
-    "short_name": "Nome curto",
-    "description": "Breve descrição do seu site",
+    "name": "DJ BackEnd Template",
+    "short_name": "DJ BackEnd",
+    "description": "Este é um template para criar backend APIs em NodeJS",
     "start_url": "/",
-    "background_color": "#f7f7f7",
-    "theme_color": "#333333",
+    "background_color": "#281d0b",
+    "theme_color": "#982810",
     "display": "standalone",
     "icons": [
         {
-            "src": "/icon-192.png",
+            "src": "/img.png",
+            "type": "image/png",
+            "sizes": "340x431"
+        },
+        {
+            "src": "/icon/icon-192.png",
             "type": "image/png",
             "sizes": "192x192"
         },
         {
-            "src": "/icon-512.png",
+            "src": "/icon/icon-512.png",
             "type": "image/png",
             "sizes": "512x512"
         }
