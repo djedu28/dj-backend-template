@@ -12,28 +12,20 @@
     ],
     "builds": [
         {
-            "src": ".sequelizerc",
-            "use": "@vercel/static"
-        },
-        {
-            "src": "package.json",
-            "use": "@vercel/static"
-        },
-        {
-            "src": "yarn.lock",
-            "use": "@vercel/static"
-        },
-        {
             "src": "/public/**/*",
-            "use": "@vercel/static"
-        },
-        {
-            "src": "/src/**/*",
             "use": "@vercel/static"
         },
         {
             "src": "/api/index.js",
             "use": "@vercel/node"
         }
+    ],
+    "files": [
+        "package.json",
+        "yarn.lock",
+        ".sequelizerc",
+        "node_modules/",
+        "public/",
+        "src/"
     ]
 }
