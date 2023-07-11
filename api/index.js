@@ -1,5 +1,6 @@
 const app = require('express')();
 const { v4 } = require('uuid');
+const api = require('../src/api.js');
 
 app.get('/api', (req, res) => {
   const path = `/api/item/${v4()}`;
@@ -14,8 +15,10 @@ app.get('/api/item/:slug', (req, res) => {
 });
 
 // Rotas
-app.use("/api/ping", (req, res) => {
+app.use("/api/pong", (req, res) => {
     res.json({ "pint": "pong" });
 });
+
+app.use("/api/",api)
 
 module.exports = app;
