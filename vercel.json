@@ -6,8 +6,12 @@
             "destination": "/api"
         },
         {
-            "source": "/:match*?",
+            "source": "/:match*",
             "destination": "/public/:match*"
+        },
+        {
+            "source": "/",
+            "destination": "/public/index.html"
         }
     ],
     "builds": [
@@ -16,16 +20,31 @@
             "use": "@vercel/static"
         },
         {
+            "src": "/error.log",
+            "use": "@vercel/static"
+        },
+        {
+            "src": "/combined.log",
+            "use": "@vercel/static"
+        },
+        {
             "src": "/api/index.js",
             "use": "@vercel/node"
         }
     ],
+    "build": {
+        "env": {
+            "YARN_INIT": "true"
+        },
+        "command": "yarn && yarn install"
+    },
     "files": [
         "package.json",
         "yarn.lock",
         ".sequelizerc",
         "node_modules/",
         "public/",
-        "src/"
+        "src/",
+        "."
     ]
 }
