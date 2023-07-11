@@ -6,7 +6,7 @@
             "destination": "/api"
         },
         {
-            "source": "/:match*",
+            "source": "/:match*?",
             "destination": "/public/:match*"
         }
     ],
