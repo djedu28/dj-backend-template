@@ -4,7 +4,7 @@ O Sequelize é uma biblioteca ORM para Node.js que permite a manipulação de ba
 
 ## Criando uma migração
 
-Para criar uma migração com o `Sequelize`, utilizamos o comando `sequelize migration:generate`. Esse comando cria um arquivo na pasta `src/database/migrations`, com um nome que indica a data e hora da criação da migração e um nome escolhido por você.
+Para criar uma migração com o `Sequelize`, utilizamos o comando `sequelize migration:generate`. Esse comando cria um arquivo na pasta `api/database/migrations`, com um nome que indica a data e hora da criação da migração e um nome escolhido por você.
 
 ``` bash
 yarn sequelize migration:generate --name create-user
@@ -13,7 +13,7 @@ yarn sequelize migration:generate --name create-user
 
 ## Editando a migração
 
-Ao executar o comando acima, um arquivo será gerado na pasta `src/database/migrations`. Esse arquivo contém um modelo padrão para a criação da migração. No exemplo abaixo, vamos criar uma tabela de usuários com os campos `id`, `nome`, `email` e `senha`:
+Ao executar o comando acima, um arquivo será gerado na pasta `api/database/migrations`. Esse arquivo contém um modelo padrão para a criação da migração. No exemplo abaixo, vamos criar uma tabela de usuários com os campos `id`, `nome`, `email` e `senha`:
 
 ```javascript
 'use strict';
@@ -103,7 +103,7 @@ Além disso, é recomendável seguir algumas práticas de padronização na cria
 > yarn sequelize migration:generate
 > ```
 >
-> ### 2. Modifique o arquivo gerado dentro da pasta `src\database\migrations`
+> ### 2. Modifique o arquivo gerado dentro da pasta `api\database\migrations`
 >
 > ...
 >

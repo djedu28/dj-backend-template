@@ -1,7 +1,7 @@
 const express = require('express');
 
-require('./database');        // Conectando ao BD
-require('./utils/logger.js'); // Ativando LOGGER
+// require('./database');        // Conectando ao BD
+// require('./utils/logger.js'); // Ativando LOGGER
 
 const api = require('./api.js');
 

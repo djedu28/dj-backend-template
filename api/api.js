@@ -2,6 +2,9 @@ const express = require('express');
 // const router = express.Router();
 const api = express.Router();
 
+require('./database');        // Conectando ao BD
+require('./utils/logger.js'); // Ativando LOGGER
+
 // Importando rotas
 const userRoutes = require('./routes/userRoutes.js');
 const exemploRoutes = require('./routes/exemploRoutes.js');

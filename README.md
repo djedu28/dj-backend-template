@@ -34,20 +34,20 @@ caso tenha dificuldades para instalar as dependências: consulte o arquivo [dj_n
 
 ## Estrutura de pastas
 
-- `src/config`: arquivos de configuração
-- `src/controllers`: controladores que lidam com as requisições HTTP
-- `src/database`: arquivos relacionados ao banco de dados
-- `src/models`: modelos de dados relacionados ao banco de dados
-- `src/routes`: rotas da API
-- `src/utils`: funções utilitárias
-- `src/server.js`: arquivo principal do servidor
-- `src/api.js`: arquivo que define a configuração e inicialização da API
+- `api/config`: arquivos de configuração
+- `api/controllers`: controladores que lidam com as requisições HTTP
+- `api/database`: arquivos relacionados ao banco de dados
+- `api/models`: modelos de dados relacionados ao banco de dados
+- `api/routes`: rotas da API
+- `api/utils`: funções utilitárias
+- `api/server.js`: arquivo principal do servidor
+- `api/api.js`: arquivo que define a configuração e inicialização da API
 
 <!--
-- `src/middlewares`: middlewares para processamento intermediário das requisições -->
+- `api/middlewares`: middlewares para processamento intermediário das requisições -->
 
 <!-- ## Estrutura do Banco de Dados -->
-<!-- ![img](./src/database/diagrama.png) -->
+<!-- ![img](./api/database/diagrama.png) -->
 
 ## Contribuindo
 

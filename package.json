@@ -1,9 +1,9 @@
 {
     "name": "dj-backend-template",
     "template": "dj-backend-template",
-    "version": "1.1.1",
+    "version": "2.1.1",
     "description": "Uma referencia para criar (futuro's) backend API com NodeJS, seguindo as melhores boas praticas que aprendi durante os anos de desenvolvimento",
-    "main": "./src/server.js",
+    "main": "api/server.js",
     "author": "Eduardo Santos (@DjEdu28)",
     "author-template": "Eduardo Santos (@DjEdu28)",
     "license": "MIT",
@@ -12,8 +12,9 @@
     "repository-template": "https://github.com/djedu28/dj-backend-template",
     "scripts": {
         "att": "yarn upgrade-interactive --latest",
-        "dev": "(cls||clear) && nodemon -r dotenv/config ./src/server.js",
-        "start": "node ./src/server.js"
+        "dev": "(cls||clear) && nodemon -r dotenv/config ./api/server.js",
+        "start": "node ./api/server.js",
+        "__build": "yarn && yarn init"
     },
     "dependencies": {
         "bcryptjs": "^2.4.3",
