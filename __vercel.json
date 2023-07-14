@@ -1,8 +1,10 @@
 {
-    "regions": [ "gru1" ],
     "trailingSlash": false,
-
     "rewrites": [
+        {
+            "source": "/api/(.*)",
+            "destination": "/api"
+        },
         {
             "source": "/:match*",
             "destination": "/public/:match*"
@@ -10,13 +12,6 @@
         {
             "source": "/",
             "destination": "/public/index.html"
-        }
-    ],
-
-    "routes": [
-        {
-            "src": "/api/(.*)",
-            "dest": "api/index.js"
         }
     ],
     "builds": [
@@ -32,5 +27,17 @@
             "src": "/api/index.js",
             "use": "@vercel/node"
         }
+    ],
+    "build": {
+        "env": {
+            "YARN_INIT": "true"
+        },
+        "command": "yarn && yarn install"
+    },
+    "files": [
+        "package.json",
+        "yarn.lock",
+        "public/**/*",
+        "api/**/*"
     ]
 }
